@@ -11,6 +11,8 @@ The prompt is shown in the [screenshot prompt1](prompt1.png). The output is capt
 
 There are state or region specific drought map images available in the site https://droughtmonitor.unl.edu/maps/maparchive.aspx. For example, to get the drought maps of california use the URL pattern `https://droughtmonitor.unl.edu/data/png/<date>/<date>_ca_trd.png`
 
+For west - `https://droughtmonitor.unl.edu/data/png/<date>/<date>_west_trd.png`
+
 ## prompt2
 ```Write a python code which takes a file named urls.txt containing list of image urls as input and generates a mp4 video with those images. Give 0.1 sec delay between downloading subsequent images ```
 

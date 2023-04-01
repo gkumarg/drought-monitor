@@ -1,11 +1,18 @@
 import datetime
 
 # Define start and end dates
-start_date = datetime.date(2000, 1, 4)
-end_date = datetime.date(2023, 3, 14)
+start_date = datetime.date(2003, 3, 1)
+end_date = datetime.date(2023, 3, 1)
 
 # Define the URL format string
-url_template = 'https://droughtmonitor.unl.edu/data/png/{date}/{date}_usdm.png'
+
+# Drought map
+url_template = 'https://droughtmonitor.unl.edu/data/png/{date}/{date}_west_trd.png'
+
+# 24 hour precipitation areas and amounts map (use create_video_gifs.py for this)
+# http://www.wpc.ncep.noaa.gov/dailywxmap/dwm_prcn_20221229.html
+# url_template = 'http://www.wpc.ncep.noaa.gov/dailywxmap/htmlimages/precip_{date}.gif'
+
 
 # Define the output file name
 output_file = 'urls.txt'
@@ -13,7 +20,7 @@ output_file = 'urls.txt'
 # Open the file for writing
 with open(output_file, 'w') as f:
     # Loop over dates in 7-day increments
-    delta = datetime.timedelta(days=7)
+    delta = datetime.timedelta(days=30)
     d = start_date
     while d <= end_date:
         # Format the URL for the current date
@@ -22,3 +29,5 @@ with open(output_file, 'w') as f:
         f.write(url + '\n')
         # Increment the date
         d += delta
+
+print("Done")
